@@ -32,6 +32,6 @@
   text-align: center;
   top: 40%;
   transform: translateY(-50%);
-  font-size: clamp(3rem, 5vw, 5em);
+  font-size: clamp(3rem, 3vw, 3em);
   pointer-events: none;
 }

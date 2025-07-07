@@ -16,10 +16,10 @@ export default function Highlight() {
         key={label}
         label={label}
         sx={{
-            fontSize: '2.5em',
+            fontSize: '1.2em',
             fontWeight: 'bold',
             color: 'white',
-            py: '1.2em',
+            py: '1em',
             textTransform: 'none',
             '&.Mui-selected': {
             color: '#90caf9',
@@ -48,7 +48,7 @@ export default function Highlight() {
                     onChange={handleChange}
                     variant="fullWidth"
                     sx={{
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.2)',
                         borderRadius: '3rem',
                     }}
                 >
