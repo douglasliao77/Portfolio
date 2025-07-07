@@ -6,7 +6,6 @@ import Higlight from './components/Highlight'
 
 function App() {
   return (
-    
     <>
       <title>Douglas Liao Portfolio</title>
       <Introduction/>

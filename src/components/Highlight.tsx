@@ -16,10 +16,10 @@ export default function Highlight() {
         key={label}
         label={label}
         sx={{
-            fontSize: '1.5rem',
+            fontSize: '1.5em',
             fontWeight: 'bold',
             color: 'white',
-            py: '2rem',
+            py: '1.5em',
             textTransform: 'none',
             '&.Mui-selected': {
             color: '#90caf9',
