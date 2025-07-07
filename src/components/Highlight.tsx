@@ -16,10 +16,10 @@ export default function Highlight() {
         key={label}
         label={label}
         sx={{
-            fontSize: '1.5em',
+            fontSize: '2.5em',
             fontWeight: 'bold',
             color: 'white',
-            py: '1.5em',
+            py: '1.2em',
             textTransform: 'none',
             '&.Mui-selected': {
             color: '#90caf9',
@@ -48,8 +48,8 @@ export default function Highlight() {
                     onChange={handleChange}
                     variant="fullWidth"
                     sx={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    borderRadius: '3rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderRadius: '3rem',
                     }}
                 >
                     {renderTab('Projects')}

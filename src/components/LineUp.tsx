@@ -42,7 +42,7 @@ export default function LineUp () {
             <div onClick={() => setShowBox(true)}>
                 <div className={styles.overlay}></div>
             </div>
-            {/* Click to start overlay */}
+            
             {!showBox && (
                 <div 
                 className={styles.clickOnMe} 
