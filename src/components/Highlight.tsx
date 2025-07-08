@@ -3,9 +3,17 @@ import { Box, Tabs, Tab } from '@mui/material';
 import styles from '../styles/Higlight.module.css';
 import campnou from '../assets/images/barcelona.jpg';
 
-function TabPanel({ children, value, index }: any) {
-  return value === index ? <div role="tabpanel">{children}</div> : null;
-}
+function Card({ title, description }: { title: string; description: string }) {
+    return (
+      <div className={styles.card}
+      >
+        
+        <div className={styles.cardImage}></div>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
+    );
+  }
 
 export default function Highlight() {
   const [value, setValue] = useState(0);
@@ -16,7 +24,7 @@ export default function Highlight() {
         key={label}
         label={label}
         sx={{
-            fontSize: '1.2em',
+            fontSize: '1.5em',
             fontWeight: 'bold',
             color: 'white',
             py: '1em',
@@ -49,19 +57,34 @@ export default function Highlight() {
                     variant="fullWidth"
                     sx={{
                         backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                        borderRadius: '3rem',
+                        borderRadius: '2rem',
                     }}
                 >
                     {renderTab('Projects')}
-                    {renderTab('Skills')}
                     {renderTab('Experience')}
+                    {renderTab('Skills')}
                 </Tabs>
-                    <TabPanel value={value} index={0}>
-                    </TabPanel>
-                    <TabPanel value={value} index={1}>
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                </TabPanel>
+                    <div style={{ display: value === 0 ? 'block' : 'none', padding: '1rem' }}>
+                        <div className={styles.projects}> 
+                            <Card title="Project One" description="React app" />
+                            <Card title="Project Two" description="Node.js" />
+                            <Card title="Project Three" description="Machine Learning" />
+                            <Card title="Project One" description="React." />
+                            <Card title="Project Two" description="API." />
+                            </div>
+                        </div>
+
+                    <div style={{ display: value === 1 ? 'block' : 'none', padding: '1rem' }}>
+                        {/* Content for Skills */}
+                        <h2>Skills</h2>
+                        <p>These are my technical skills...</p>
+                    </div>
+
+                    <div style={{ display: value === 2 ? 'block' : 'none', padding: '1rem' }}>
+                        {/* Content for Experience */}
+                        <h2>Experience</h2>
+                        <p>My work experience includes...</p>
+                    </div>
             </Box>
         </div>
     </section>

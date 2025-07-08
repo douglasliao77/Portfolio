@@ -42,7 +42,7 @@ export default function LineUp () {
             <div onClick={() => setShowBox(true)}>
                 <div className={styles.overlay}></div>
             </div>
-            
+
             {!showBox && (
                 <div 
                 className={styles.clickOnMe} 
@@ -93,8 +93,6 @@ export default function LineUp () {
                             >
                                 {renderField(start_line, 3)}
                             </svg>
-
-                            
 
                             <div className={styles.goalkeeperArea}>
                             <svg
