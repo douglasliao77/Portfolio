@@ -20,7 +20,7 @@ function Card({ title, description }: { title: string; description: string }) {
         key={label}
         label={label}
         sx={{
-          fontSize: '1rem',
+          fontSize: '2rem',
           fontWeight: 'bold',
           color: 'white',
           textTransform: 'none',
@@ -49,7 +49,7 @@ function Card({ title, description }: { title: string; description: string }) {
               onChange={(_, newValue) => setValue(newValue)}
               variant="fullWidth"
               scrollButtons="auto"
-              sx={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: '1rem' }}
+              sx={{ backgroundColor: '#1e293b', borderRadius: '1rem' }}
             >
               {['Projects', 'Experience', 'Skills'].map(renderTab)}
             </Tabs>

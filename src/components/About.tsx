@@ -10,10 +10,10 @@ export default function About() {
         <div className={styles.aboutContainer}>
             {/* Text content */}
             <div className={styles.aboutText}>
-            <h2 className={styles.aboutTitle}>Hello, I'm Douglas!</h2>
-            <p className={styles.aboutDescription}>
-                I am a passionate software developer with experience building web apps and creative projects. I enjoy coding, learning new tech, and sharing knowledge.
-            </p>
+              <h2 className={styles.aboutTitle}>Hello, I'm Douglas!</h2>
+              <p className={styles.aboutDescription}>
+                  I am a passionate software developer with experience building web apps and creative projects. I enjoy coding, learning new tech, and sharing knowledge.
+              </p>
             </div>
 
             {/* Animation beside the text */}
