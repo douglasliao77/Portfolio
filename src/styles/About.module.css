@@ -1,0 +1,118 @@
+.aboutSection {
+    min-height: 100vh; /* At least full viewport height */
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+.aboutText {
+    background-color: #1e293b; 
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: white;
+    max-width: 400px; 
+    display: flex;            
+    flex-direction: column;   
+    justify-content: flex-start;
+    margin: 0 auto;
+    
+}
+
+.aboutHeading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10rem; 
+}
+  
+.aboutTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    
+}
+  
+.aboutDescription {
+    font-size: 2rem;
+    line-height: 1.6;
+}
+  
+  
+.aboutContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+    justify-content: center;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-bottom: 10rem; 
+  }
+
+.aboutAnimation {
+    flex: 1 1 300px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
+  }
+
+  
+.aboutStats {
+    align-items: center;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+  
+.statBox {
+    background-color: #1e293b;
+    border-radius: 2rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    min-width: 320px;
+}
+  
+.statBox:hover {
+    background-color: #374151;
+}
+  
+.statNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+  
+.statLabel {
+    font-size: 2rem;
+    opacity: 0.8;
+    margin-top: 0;
+}
+  
+  /* Responsive */
+@media (max-width: 768px) {
+    .aboutContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutText,
+  
+    .aboutStats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+  
