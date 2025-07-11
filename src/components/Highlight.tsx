@@ -33,7 +33,7 @@ function Card({ title, description }: { title: string; description: string }) {
     );
   
     return (
-      <section className={styles.container}>
+      <section id="highlight" className={styles.container}>
   
         <div className={styles.content}>
           <h1>Portfolio Showcase</h1>
@@ -47,7 +47,7 @@ function Card({ title, description }: { title: string; description: string }) {
               onChange={(_, newValue) => setValue(newValue)}
               variant="fullWidth"
               scrollButtons="auto"
-              sx={{ backgroundColor: '#1e293b', borderRadius: '1rem' }}
+              sx={{ backgroundColor: 'black', borderRadius: '1rem' }}
             >
               {['Projects', 'Experience', 'Skills'].map(renderTab)}
             </Tabs>

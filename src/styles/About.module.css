@@ -14,10 +14,8 @@
 .aboutText {
     padding: 2rem;
     border-radius: 1rem;
-    color: white;
     flex-direction: column;  
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
- 
 }
 
 .aboutHeading {
@@ -27,18 +25,19 @@
     margin-bottom: 10rem; 
     color: #eb7b13;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-
 }
   
 .aboutTitle {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: white;
     
 }
   
 .aboutDescription {
     font-size: 2rem;
     line-height: 1.6;
+    color: rgb(175, 179, 179);
 }
   
 .aboutContainer {
@@ -47,11 +46,13 @@
     gap: 2rem; 
     justify-content: center;
     max-width: 1000px; 
+ 
     height: 50rem;
     margin: 0 auto;
     margin-bottom: 6rem; 
     background-color: #1e293b;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    background-color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 2rem;
 }
 
@@ -76,6 +77,7 @@
   
 .statBox {
     background-color: #1e293b;
+    background-color: black;
     border-radius: 2rem;
     color: #eb7b13;
     text-align: center;

@@ -3,11 +3,9 @@ import styles from '../styles/Introduction.module.css';
 import campnou from '../assets/images/barcelona.jpg';
 
 export default function Introduction() {
+
   return (
-
-    <>
-
-    <section className={styles.container}>
+    <section id="intro" className={styles.container}>
       <img src={campnou} alt="Camp Nou Stadium" className={styles.background} />
 
       <div className={styles.content}>
@@ -18,8 +16,8 @@ export default function Introduction() {
               'Hej, jag heter Douglas',
               'Hola, soy Douglas',
               'Bonjour, je suis Douglas',
-              'こんにちは、ダグラスです',       
-              '你好，我是Douglas'             
+              'こんにちは、ダグラスです',
+              '你好，我是Douglas'
             ]}
             loop={0}
             cursor
@@ -29,12 +27,9 @@ export default function Introduction() {
             delaySpeed={2000}
           />
         </h1>
-
-
-
       </div>
-    </section>
 
-    </>
+  
+    </section>
   );
 }
