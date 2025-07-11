@@ -22,10 +22,11 @@ function Card({ title, description }: { title: string; description: string }) {
         sx={{
           fontSize: '2rem',
           fontWeight: 'bold',
-          color: 'white',
+          color: '#eb7b13',
           textTransform: 'none',
           '&.Mui-selected': {
-            color: '#90caf9',
+            color: '#eb7b13',
+            
           },
         }}
       />
@@ -36,10 +37,7 @@ function Card({ title, description }: { title: string; description: string }) {
   
         <div className={styles.content}>
           <h1>Portfolio Showcase</h1>
-          <p>
-            Explore my journey through projects, qualifications, and technical expertise.<br />
-            Each section represents a milestone in my continuous learning path.
-          </p>
+       
         </div>
   
         <div className={styles.tabContainer}>

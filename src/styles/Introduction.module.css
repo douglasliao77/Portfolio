@@ -5,6 +5,18 @@
   overflow: hidden;
 }
 
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 2;
+}
+
 .background {
   position: fixed;     
   top: 0;
@@ -14,6 +26,7 @@
   object-fit: cover;   
   z-index: -1;         
   pointer-events: none; 
+  filter: brightness(0.5);
 }
 
 
@@ -30,11 +43,13 @@
 .content {
   position: relative;
   z-index: 3;
-  color: white;
+  color: #eb7b13;
   text-align: center;
   top: 40%;
   transform: translateY(-50%);
   pointer-events: none;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+
 }
 
 .content h1 {

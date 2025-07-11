@@ -25,7 +25,8 @@
   font-size: 5rem;
   font-weight: 700;
   margin-bottom: 0.5em;
-  color: white;
+  color: #eb7b13;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .content p {
@@ -73,8 +74,8 @@
 }
 
 .card:hover {
-  background-color: #374151;
-  transform: scale(0.97);
+  box-shadow: 0 0 10px #eb7b13;
+  transform: scale(1.03);
 }
 
 .cardImage {
