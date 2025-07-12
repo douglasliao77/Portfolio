@@ -3,7 +3,7 @@ import styles from '../styles/Introduction.module.css';
 import campnou from '../assets/images/barcelona.jpg';
 
 export default function Introduction() {
-
+  
   return (
     <section id="intro" className={styles.container}>
       <img src={campnou} alt="Camp Nou Stadium" className={styles.background} />
@@ -28,8 +28,6 @@ export default function Introduction() {
           />
         </h1>
       </div>
-
-  
     </section>
   );
 }
