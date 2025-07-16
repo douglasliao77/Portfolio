@@ -1,16 +1,25 @@
 import { useState } from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import styles from '../styles/Higlight.module.css';
+import UTTT from '../assets/images/UTTT.png';
 
-function Card({ title, description }: { title: string; description: string }) {
-    return (
-      <div className={styles.card}>
-        <div className={styles.cardImage}></div>
-        <h2>{title}</h2>
-        <p>{description}</p>
+
+
+interface CardProps {
+  title: string;
+  imageSrc?: string;
+}
+
+function Card({ title, imageSrc }: CardProps) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.cardImage}>
+        <img src={imageSrc} alt={title} />
       </div>
-    );
-  }
+      <h1>{title}</h1>
+    </div>
+  );
+}
   
   export default function Highlight() {
     const [value, setValue] = useState(0);
@@ -56,12 +65,13 @@ function Card({ title, description }: { title: string; description: string }) {
           <div className={styles.tabContent}>
             {value === 0 && (
               <div className={styles.projects}>
-                <Card title="Project One" description="React App" />
-                <Card title="Project Two" description="Node.js API" />
-                <Card title="Project Three" description="Machine Learning" />
-                <Card title="Project One" description="React App" />
-                <Card title="Project Two" description="Node.js API" />
-                <Card title="Project Three" description="Machine Learning" />
+                <Card 
+                  title="Ultimate Tic Tac Toe AI" 
+                  imageSrc={UTTT}
+                />
+                <Card 
+                  title="Coming Soon!" 
+                />
                 
               </div>
             )}

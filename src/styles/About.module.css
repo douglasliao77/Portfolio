@@ -1,5 +1,4 @@
 .aboutSection {
-    min-height: 100vh;
     position: relative;
     z-index: 3;
     max-width: 1200px;
@@ -59,6 +58,17 @@
 .aboutContainer:hover {
     box-shadow: 0 0 10px #eb7b13;
 }
+
+
+.console {
+    font-family: monospace;
+    color: #00ff88;
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  }
 
 .aboutAnimation {
     max-width: 60%;

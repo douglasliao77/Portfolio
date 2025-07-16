@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 html, body {
     margin: 0;
@@ -8,7 +10,8 @@ html, body {
     height: 100%;
     width: 100%;
     font-size: 10px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+
     overflow-x: hidden;
   }
 
@@ -42,3 +45,4 @@ body {
   background-color: black; 
 
 }
+
