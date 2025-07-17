@@ -3,7 +3,7 @@ import Highlight from './components/Highlight';
 import About from './components/About';
 import Experience from './components/Experience';
 import StarsBackground from './components/StarsBackground';
-
+import Skills from './components/Skills';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Introduction />
         <About />
         <Experience />
+        <Skills />
         <Highlight />
     </>
   );

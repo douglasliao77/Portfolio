@@ -10,18 +10,6 @@
   flex-wrap: wrap;
 }
 
-.background {
-  position: fixed;     
-  top: 0;
-  left: 0;
-  width: 100vw;        
-  height: 100vh;      
-  object-fit: cover;   
-  z-index: -2;
-  pointer-events: none; 
-  filter: brightness(0.2);
-}
-
 .contentContainer {
   display: flex;
   position: relative;
@@ -36,25 +24,9 @@
   position: relative;
   color: #a88360;
   text-align: left;
-
   width: 50%;
-  
-  pointer-events: none;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   margin-bottom: 0rem;
-}
-
-.subContent {
-  background-color: transparent;
-  position: absolute;
-  width: 40%;
-  bottom: 0;
-  right: 0%;
-  height: 30%;
-  align-self: flex-end;
-  
-  font-size: clamp(1rem, 1vw, 0.8rem);
-  color: #eb7b13;
 }
 
 .mainContent h1 {
@@ -70,22 +42,44 @@
 }
 
 .software {
-  color: #eb7b13; /* example: blue */
-}
-
-.spanContent {
-  color: #acacac;
+  color: #eb7b13; 
 }
 
 .developer {
-  color: white; /* example: green */
+  color: white; 
 }
 
+.crack {
+  position: relative;
+  width: 70%; 
+  height: 70%;
+  object-fit: contain;
+  z-index: 2; 
+  pointer-events: none;
+  opacity: 0.8; 
+}
+
+.iconContainer {
+  display: flex;
+  gap: 32px;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconLink {
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.iconLink:hover {
+  color: #000;
+}
 
 
 @media (max-width: 900px) {
   .contentContainer {
-    flex-direction: column; /* Stack vertically */
+    flex-direction: column;
     align-items: center;
   }
 

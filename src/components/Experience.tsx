@@ -3,12 +3,11 @@ import styles from '../styles/Experience.module.css';
 export default function Experience () {
 
 const events = [
-    { title: 'Master Thesis | Ericsson', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
-    { title: 'Software Developer Intern | Ericsson', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
-    { title: 'Course Assistant | Linköping University', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
-    { title: 'Research Assistant', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
-    { title: 'Bachelor Thesis', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
-    { title: '2007', text: 'Lorem ipsum dolor sit amet, quo ei simul congue exerci...' },
+    { title: 'Master Thesis | Ericsson', text: '' },
+    { title: 'Software Developer Intern | Ericsson', text: '' },
+    { title: 'Course Assistant | Linköping University', text: '' },
+    { title: 'Research Assistant | Linköping University', text: '' },
+    { title: 'Bachelor Thesis | Personalkollen', text: '' },
   ];
     return (
         <section className={styles.ExperienceContainer}>
