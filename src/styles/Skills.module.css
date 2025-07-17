@@ -11,15 +11,15 @@
     border-radius: 3rem;
     height: auto;
     margin-top: 7rem;
+    font-family: 'Josefin Sans', sans-serif;
+    
 }
 
 .techStack {
     display: grid;
     grid-template-columns: 30rem 1fr;
-    column-gap: 15rem;
-    row-gap: 2rem;
-    align-items: center; 
-    
+    column-gap: 20rem;
+    row-gap: 6rem;
 }
 
 .techTitle {
@@ -29,20 +29,16 @@
     padding: 1rem;
     border-radius: 0.5rem;
     text-align: left;
-    width: 30rem;
+    width: 37rem;
     min-height: 6rem;
-    
-
 }
 
 .techContainer {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
-    height: 10rem;
     border-radius: 0.5rem;
     gap: 1rem;
-    margin-right: 5rem;
 }
 
 
@@ -52,7 +48,9 @@
     gap: 0.75rem;
     color: white; /* make sure text is visible */
     margin-bottom: 1rem;
-  }
+    padding: 0.3em 0.6em;
+    border-radius: 1rem;
+}
   
 .skillImage {
     width: 35px;
@@ -62,19 +60,24 @@
 
 .skillLabel {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+    font-style: bold;
     font-weight: 500;
     white-space: nowrap;
 }
+
+.skillCard.noSourceCard .skillLabel {
+    padding: 0.3em 0.6em;
+    box-shadow: 0 0 10px #eb7b13;
+    border-radius: 1rem;
+    color: white;
+  }
 
 
 
 @media (max-width: 768px) {
     .techStack {
         grid-template-columns: 1fr;
-    }
-
-    .techTitle {
-        text-align: left; /* optional, more natural on mobile */
+        row-gap: 1rem;
     }
 }

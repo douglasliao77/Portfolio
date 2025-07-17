@@ -9,7 +9,7 @@
   object-fit: cover;   
   z-index: -2;
   pointer-events: none; 
-  filter: brightness(0.2);
+  filter: brightness(0.25);
 }
 
 .stars {
