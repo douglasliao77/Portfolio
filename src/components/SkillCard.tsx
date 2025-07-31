@@ -57,7 +57,8 @@ const Card = styled.div<{ noSource: boolean }>`
   margin-bottom: 1rem;
   padding: 0.3em 0.6em;
   border-radius: 1rem;
-  background-color: ${(props) => (props.noSource ? 'black' : 'transparent')};
+  background-color: ${(props: { noSource: boolean }) =>
+    props.noSource ? 'black' : 'transparent'};
 `;
 
 const SkillImage = styled.img`
@@ -71,7 +72,8 @@ const SkillLabel = styled.span<{ noSource: boolean }>`
   font-size: 2.1rem;
   font-weight: 500;
   white-space: nowrap;
-  padding: ${(props) => (props.noSource ? '0.3em 0.6em' : '0')};
+  padding: ${(props: { noSource: boolean }) =>
+    props.noSource ? '0.3em 0.6em' : '0'};
 `;
 
 export default SkillCard;
