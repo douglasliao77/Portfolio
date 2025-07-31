@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SkillCard from './SkillCard'; // Adjust the import path as needed
+import SkillCard from './SkillCard'; 
 
 interface Skill {
   title: string;
