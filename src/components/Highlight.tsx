@@ -2,28 +2,10 @@ import { useState } from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import styles from '../styles/Higlight.module.css';
 import UTTT from '../assets/images/UTTT.png';
-
-
-
-interface CardProps {
-  title: string;
-  imageSrc?: string;
-}
-
-function Card({ title, imageSrc }: CardProps) {
-  return (
-    <div className={styles.card}>
-      <div className={styles.cardImage}>
-        <img src={imageSrc} alt={title} />
-      </div>
-      <h1>{title}</h1>
-    </div>
-  );
-}
+import Card from './ProjectCard'
 
 export default function Highlight() {
   const [value, setValue] = useState(0);
-
   const renderTab = (label: string) => (
     <Tab
       key={label}
@@ -50,7 +32,6 @@ export default function Highlight() {
       </div>
 
       <div className={styles.tabContainer}>
-        
         <Box>
           <Tabs
             value={value}
@@ -69,6 +50,8 @@ export default function Highlight() {
               <Card 
                 title="Ultimate Tic Tac Toe AI" 
                 imageSrc={UTTT}
+                skills={[{ title: 'React' }, { title: 'TypeScript' }, 
+                  { title: 'HTML'}, { title: 'CSS'}, { title: 'Vercel'}]}
               />
               <Card 
                 title="Coming Soon!" 

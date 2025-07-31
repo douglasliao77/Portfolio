@@ -2,13 +2,13 @@ import Introduction from './components/Introduction';
 import Highlight from './components/Highlight';
 import About from './components/About';
 import Experience from './components/Experience';
-import StarsBackground from './components/StarsBackground';
+import Background from './components/Background';
 import Skills from './components/Skills';
 
 function App() {
   return (
     <>
-        <StarsBackground />
+        <Background />
         <Introduction />
         <About />
         <Experience />

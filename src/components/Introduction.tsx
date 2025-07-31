@@ -1,5 +1,4 @@
 import styles from '../styles/Introduction.module.css';
-import crack from '../assets/images/crack.webp';
 import { MdEmail } from 'react-icons/md';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
@@ -50,7 +49,6 @@ export default function Introduction() {
     </div>
         </div>
         
-      <img src={crack} alt="Crack effect" className={styles.crack} />
       </div>
     </section>
   );
