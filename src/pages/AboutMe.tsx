@@ -2,10 +2,10 @@
 import styled from 'styled-components';
 import flappy from '../assets/images/flappy.jpg';
 import chess from '../assets/images/chess.png';
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 import SkillMe from './SkillMe';
-
+import type { KeenSliderInstance } from 'keen-slider'
 
 export default function AboutMe()
 {
@@ -14,7 +14,7 @@ export default function AboutMe()
       loop: true,
     },
     [
-      (slider) => {
+      (slider: KeenSliderInstance) => {
         let timeout: ReturnType<typeof setTimeout>
         let mouseOver = false
         function clearNextTimeout() {
