@@ -34,10 +34,13 @@ const ProjectCard: React.FC<CardProps> = ({ title, imageSrc, skills }) => {
 
 // Styled components
 const Card = styled.div`
+  display: flex;
   border-radius: 1rem;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
     box-shadow: 0 0 10px #eb7b13;
@@ -46,12 +49,13 @@ const Card = styled.div`
 `;
 
 const CardImage = styled.div`
-  width: 100%;
+  width: 80%;
   height: 280px;
   background-color: #64748b;
   border-radius: 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
+  
 `;
 
 const Image = styled.img`
@@ -66,6 +70,7 @@ const Title = styled.h1`
   margin-bottom: 0.5rem;
   text-align: center;
   color: white;
+
 `;
 
 // Container for skill cards, you can customize spacing here

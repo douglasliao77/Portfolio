@@ -13,10 +13,10 @@
 .contentContainer {
   display: flex;
   position: relative;
-  top: 20%; 
-  left: 50%; 
+  top: 30%; 
+  left: 55%; 
   transform: translateX(-50%);
-  width: 70%;
+  width: 80%;
   height: 90%;
 }
 
@@ -25,24 +25,25 @@
   color: #a88360;
   text-align: left;
   width: 50%;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   margin-bottom: 0rem;
 }
 
 .mainContent h1 {
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(5rem, 4.5vw, 15rem);
   line-height: 0.9;
   margin-bottom: 2rem;
+  font-family: "Josefin Sans", "Josefin Sans Fallback";
+  font-weight: 100;
 }
 
 .description {
   margin-top: 0.2rem;
   font-size: clamp(1.5rem, 2vw, 2.5rem);
-  color: #acacac;
+  color: #e2e2e2;
 }
 
 .software {
-  color: #eb7b13; 
+  color: rgb(216, 78, 44);
 }
 
 .developer {

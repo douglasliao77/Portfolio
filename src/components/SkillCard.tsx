@@ -22,6 +22,7 @@ const data = {
   'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
   'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
   'C': 'https://devicon-website.vercel.app/api/c/original.svg',
+  "C#": "https://devicon-website.vercel.app/api/csharp/original.svg",
   'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
   'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
   'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
@@ -36,6 +37,7 @@ const data = {
   'PyTorch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
   'scikit-learn': 'https://cdn.simpleicons.org/scikitlearn',
   'Pandas': 'https://cdn.simpleicons.org/pandas',
+  "Unity": "https://devicon-website.vercel.app/api/unity/original.svg",
   'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
   'NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
   'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
@@ -50,15 +52,12 @@ const data = {
 };
 
 const Card = styled.div<{ noSource: boolean }>`
+  color: white;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  color: white;
-  margin-bottom: 1rem;
-  padding: 0.3em 0.6em;
+  gap: 0.5rem;
+  padding: 0.5rem;
   border-radius: 1rem;
-  background-color: ${(props: { noSource: boolean }) =>
-    props.noSource ? 'black' : 'transparent'};
 `;
 
 const SkillImage = styled.img`
@@ -69,7 +68,7 @@ const SkillImage = styled.img`
 
 const SkillLabel = styled.span<{ noSource: boolean }>`
   color: white;
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 500;
   white-space: nowrap;
   padding: ${(props: { noSource: boolean }) =>
