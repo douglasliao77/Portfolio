@@ -23,7 +23,6 @@ export default function SkillMe() {
   );
 }
 
-
 const Container = styled.div`
   position: relative;
   margin: 0 auto;
@@ -37,27 +36,27 @@ const Container = styled.div`
 
 const StackContainer = styled.div`
   display: grid;
-  grid-template-columns: 35rem 1fr;
-  column-gap: 2rem;
-  row-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 6rem;
   padding: 1rem;
-  font-size: 3.5rem;
+
   font-weight: bold;
   color: white;
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr; 
-    row-gap: 0.0rem;
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
 const TechTitle = styled.div`
   color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
   text-align: left;
-  width: 37rem;
-  min-height: 6rem;
+  width: 100%;
+  font-size: 3.5rem;
 `;
 
 const TechContainer = styled.div`
@@ -65,10 +64,8 @@ const TechContainer = styled.div`
   flex-wrap: wrap;
   row-gap: 2rem;
   column-gap: 1rem;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
   width: 100%;
-  box-sizing: border-box;
+
 `;
 
 const skillData = [
@@ -141,9 +138,6 @@ const skillData = [
         {  title: 'VS Code' },
         { title: 'IntelliJ' },
   
-        // Communications
-        { title: 'Trello' },
-        { title: 'Slack' },
     ]
   },
   

@@ -2,18 +2,21 @@ import styled from 'styled-components';
 
 interface SkillCardProps {
   title: string;
+  showIcon?: boolean; 
 }
 
-const SkillCard = ({ title }: SkillCardProps) => {
+const SkillCard = ({ title, showIcon = true }: SkillCardProps) => {
   const source = (data as Record<string, string | undefined>)[title] ?? null;
+  const showImage = showIcon && !!source;
 
   return (
-    <Card noSource={!source}>
-      {source && <SkillImage src={source} alt={title} />}
-      <SkillLabel noSource={!source}>{title}</SkillLabel>
+    <Card noSource={!showImage}>
+      {showImage && <SkillImage src={source} alt={title} />}
+      <SkillLabel noSource={!showImage}>{title}</SkillLabel>
     </Card>
   );
 };
+
 
 const data = {
   'Computer Vision': '',
@@ -69,6 +72,7 @@ const SkillImage = styled.img`
 const SkillLabel = styled.span<{ noSource: boolean }>`
   color: white;
   font-size: 2rem;
+  line-height: 1;
   font-weight: 500;
   white-space: nowrap;
   padding: ${(props: { noSource: boolean }) =>

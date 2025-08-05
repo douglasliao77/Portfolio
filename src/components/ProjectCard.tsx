@@ -11,50 +11,90 @@ interface CardProps {
   title: string;
   imageSrc?: string;
   skills?: Skill[];
+  websiteUrl?: string;
+  githubUrl?: string;
 }
 
-const ProjectCard: React.FC<CardProps> = ({ title, imageSrc, skills }) => {
+const ProjectCard: React.FC<CardProps> = ({
+  title,
+  imageSrc,
+  skills,
+  websiteUrl,
+  githubUrl,
+}) => {
   return (
-    <Card>
-      <Title>{title}</Title>
+    <Container>
       <CardImage>
         {imageSrc && <Image src={imageSrc} alt={title} />}
       </CardImage>
       <SkillsContainer>
         {skills?.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            title={skill.title}
-          />
+          <SkillCard key={skill.title} title={skill.title} showIcon={false} />
         ))}
       </SkillsContainer>
-    </Card>
+      {(websiteUrl || githubUrl) && (
+        <ButtonContainer>
+          {websiteUrl && (
+            <Button href={websiteUrl} target="_blank">
+              Website
+            </Button>
+          )}
+          {githubUrl && (
+            <Button href={githubUrl} target="_blank">
+              GitHub
+            </Button>
+          )}
+        </ButtonContainer>
+      )}
+    </Container>
   );
 };
 
-// Styled components
-const Card = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+`;
+
+const Button = styled.a`
+  width: 40%;
   border-radius: 1rem;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 2rem;
+  transition: background-color 0.2s;
 
   &:hover {
-    box-shadow: 0 0 10px #eb7b13;
-    transform: scale(1.02);
+    background-color: #444;
   }
+
+
+`;
+
+
+
+const Container = styled.div`
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 `;
 
 const CardImage = styled.div`
-  width: 80%;
-  height: 280px;
   background-color: #64748b;
   border-radius: 1rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
   
 `;
 
@@ -62,22 +102,11 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1rem;
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  color: white;
-
-`;
-
-// Container for skill cards, you can customize spacing here
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   justify-content: center;
 `;
 
