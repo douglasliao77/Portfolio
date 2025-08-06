@@ -36,7 +36,7 @@ const ProjectCard: React.FC<CardProps> = ({
         <ButtonContainer>
           {websiteUrl && (
             <Button href={websiteUrl} target="_blank">
-              Website
+              Demo
             </Button>
           )}
           {githubUrl && (
@@ -74,11 +74,7 @@ const Button = styled.a`
   &:hover {
     background-color: #444;
   }
-
-
 `;
-
-
 
 const Container = styled.div`
   display: flex;
