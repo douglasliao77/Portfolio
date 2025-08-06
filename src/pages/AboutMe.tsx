@@ -1,11 +1,5 @@
 
 import styled, { css }  from 'styled-components';
-import flappy from '../assets/images/flappy.jpg';
-import mona from '../assets/images/mona.png';
-import boat from '../assets/images/boat.jpg';
-import plane from '../assets/images/plane.png';
-import chess from '../assets/images/chess.png';
-import me from '../assets/images/me.jpg';
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -86,7 +80,7 @@ export default function AboutMe()
           </p>
           
           <img 
-            src={me} 
+            src='/flappy.jpg'
             alt="Flappy" 
             style={{ width: '100%', height: 'auto' }} 
           />
@@ -108,7 +102,7 @@ export default function AboutMe()
               exercitation. Ad minim veniam, quis nostrud 
           </p>
           <img 
-            src={boat} 
+            src='/boat.jpg' 
             alt="Flappy" 
             style={{ width: '100%', height: 'auto' }} 
           />
@@ -140,7 +134,7 @@ export default function AboutMe()
 								</p>
 							</Item>
 							<Item>
-                <img src={flappy} 
+                <img src="/flappy.jpg"
                   alt="Flappy" 
                   style={{ width: '100%', height: 'auto' }} 
                 />
@@ -160,7 +154,7 @@ export default function AboutMe()
 								</Item>
 								<Item>
 									<img 
-                    src={mona} 
+                    src="/mona.png"
                     alt="Flappy" 
                     style={{ width: '100%', height: 'auto' }} 
                   />
@@ -180,7 +174,7 @@ export default function AboutMe()
 												<p>Nulla facilisi. Etiam sollicitudin.</p>
 										</Item>
 										<Item>
-												<img src={plane} 
+												<img src='/plane.png'
                           alt="Chess" 
                           style={{ width: '80%', height: '50%' }} />
 										</Item>
@@ -193,7 +187,7 @@ export default function AboutMe()
 												<p>Nulla facilisi. Etiam sollicitudin.</p>
 										</Item>
 										<Item>
-												<img src={chess} 
+												<img src='chess.png'
                           alt="Chess" 
                           style={{ width: '100%', height: 'auto' }} />
 										</Item>
