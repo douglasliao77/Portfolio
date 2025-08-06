@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import "keen-slider/keen-slider.min.css";
 import type { KeenSliderInstance } from 'keen-slider';
 import ProjectCard from '../components/ProjectCard';
+import uttt from '../assets/images/uttt.png'
 
 
 export default function App() {
@@ -66,7 +67,7 @@ export default function App() {
                   <h1> .</h1>
                   <ProjectCard 
                     title="UTTT" 
-                    imageSrc="Portfolio/uttt.png"
+                    imageSrc={uttt}
                     skills={[{ title: 'React' }, { title: 'TypeScript' }, 
                       { title: 'HTML'}, { title: 'CSS'}, { title: 'Vercel'}]}
                     githubUrl="https://github.com/douglasliao77/tic-tac-toe-2"

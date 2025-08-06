@@ -1,5 +1,12 @@
 
 import styled, { css }  from 'styled-components';
+import boat from '../assets/images/boat.png'
+import chess from '../assets/images/chess.png'
+import me from '../assets/images/me.jpg'
+import flappy from '../assets/images/flappy.jpg'
+import mona from '../assets/images/mona.png'
+import plane from '../assets/images/plane.png'
+
 
 
 import { useKeenSlider } from "keen-slider/react";
@@ -81,7 +88,7 @@ export default function AboutMe()
           </p>
           
           <img 
-            src="Portfolio/me.jpg" 
+            src={me}
             alt="Flappy" 
             style={{ width: '100%', height: 'auto' }} 
           />
@@ -103,7 +110,7 @@ export default function AboutMe()
               exercitation. Ad minim veniam, quis nostrud 
           </p>
           <img 
-            src="Portfolio/boat.png" 
+            src={boat}
             alt="Flappy" 
             style={{ width: '100%', height: 'auto' }} 
           />
@@ -135,7 +142,7 @@ export default function AboutMe()
 								</p>
 							</Item>
 							<Item>
-                <img src="Portfolio/flappy.jpg"
+                <img src={flappy}
                   alt="Flappy" 
                   style={{ width: '100%', height: 'auto' }} 
                 />
@@ -155,7 +162,7 @@ export default function AboutMe()
 								</Item>
 								<Item>
 									<img 
-                    src="Portfolio/mona.png"
+                    src={mona}
                     alt="Flappy" 
                     style={{ width: '100%', height: 'auto' }} 
                   />
@@ -175,7 +182,7 @@ export default function AboutMe()
 												<p>Nulla facilisi. Etiam sollicitudin.</p>
 										</Item>
 										<Item>
-												<img src="Portfolio/plane.png"
+												<img src={plane}
                           alt="Chess" 
                           style={{ width: '100%', height: '90%' }} />
 										</Item>
@@ -188,7 +195,7 @@ export default function AboutMe()
 												<p>Nulla facilisi. Etiam sollicitudin.</p>
 										</Item>
 										<Item>
-												<img src="Portfolio/chess.png"
+												<img src={chess}
                           alt="Chess" 
                           style={{ width: '100%', height: 'auto' }} />
 										</Item>
