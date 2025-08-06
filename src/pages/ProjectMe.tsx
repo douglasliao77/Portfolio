@@ -1,6 +1,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import styled, { css } from "styled-components";
 import "keen-slider/keen-slider.min.css";
+import uttt from '../assets/images/UTTT.png';
 import type { KeenSliderInstance } from 'keen-slider';
 import ProjectCard from '../components/ProjectCard';
 
@@ -63,34 +64,28 @@ export default function App() {
                     </p>
                   </Item>
                   <Item>
-                    <h1> .</h1>
-                    <ProjectCard 
-                      title="UTTT" 
-                      imageSrc='/UTTT.png'
-                      skills={[{ title: 'React' }, { title: 'TypeScript' }, 
-                        { title: 'HTML'}, { title: 'CSS'}, { title: 'Vercel'}]}
-                      githubUrl="https://github.com/douglasliao77/tic-tac-toe-2"
-                      websiteUrl="https://metatictactoe.vercel.app/"
-                    />
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing 
-                      elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. ad minim veniam, quis nostrud 
-                      exercitation. Ad minim veniam, quis nostrud 
-                    </p>
-                  </Item>
+                  <h1> .</h1>
+                  <ProjectCard 
+                    title="UTTT" 
+                    imageSrc={uttt}
+                    skills={[{ title: 'React' }, { title: 'TypeScript' }, 
+                      { title: 'HTML'}, { title: 'CSS'}, { title: 'Vercel'}]}
+                    githubUrl="https://github.com/douglasliao77/tic-tac-toe-2"
+                    websiteUrl="https://metatictactoe.vercel.app/"
+                  />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing 
+                    elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. ad minim veniam, quis nostrud 
+                    exercitation. Ad minim veniam, quis nostrud 
+                  </p>
+                </Item>
 								</ContentGrid>
 						</div>
             <div className="keen-slider__slide">
 								<ContentGrid>
 										<Item>
 												<h1>Coming Soon</h1>
-                        <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing 
-                      elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. ad minim veniam, quis nostrud 
-                      exercitation. Ad minim veniam, quis nostrud 
-                    </p>
 										</Item>
 								</ContentGrid>
 						</div>
@@ -115,10 +110,7 @@ interface ItemProps {
 
 const Item = styled.div<ItemProps>`
 	background-color: black;
-	max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+	width: 100%;
 	display: flex
 	align-items: center
 	justify-content: center;
