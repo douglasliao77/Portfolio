@@ -7,13 +7,7 @@ function App() {
 
         <Intro/>
         <AboutMe/>
-        <img
-        src="/boat.png"
-        alt="Boat"
-        width={300}
-        height={300}
-        style={{ display: 'block', border: '2px solid white', zIndex: '100' }}
-      />
+
     </>
   );
 }
