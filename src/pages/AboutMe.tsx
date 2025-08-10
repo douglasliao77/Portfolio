@@ -2,7 +2,6 @@
 import styled, { css }  from 'styled-components';
 import boat from '../assets/images/boat.png'
 import chess from '../assets/images/chess.png'
-import me from '../assets/images/me.jpg'
 import flappy from '../assets/images/flappy.jpg'
 import mona from '../assets/images/mona.png'
 import plane from '../assets/images/plane.png'
@@ -75,53 +74,76 @@ export default function AboutMe()
         <ContentGrid
         >
         <Item useFirstLetter >
-          <h1>Who am I?</h1>
+          <h1>Where are we?</h1>
+          
+          <div>
+            <p className="large-first-letter">
+              For the longest time, I thought my future would be on the football 
+              field. I spent hours chasing the ball, dreaming big — just like 
+              most of my friends. Long story short, life had a different game 
+              plan for me.
+
+              
+            </p>
+            <p>
+              I found it very hard to visualize exactly how I’d love
+              my life to be. But I got convinced that exploring new paths
+              and learning along the way would help me figure it out.
+              So, I chose to study engineering at Linköping University,
+              not because I had all the answers, but because I was curious
+              to see where it might take me.
+            </p>
+            <p>
+            Along the way, I made a lot of new friends. I also discovered that 
+            I really enjoy solving complex problems, and it’s even more fun when accomplish 
+            it together
+            with others. Studying engineering at Linköping University turned
+            out to be quite an adventure, with every project offering a chance 
+            to explore new technologies and figure out what I actually enjoyed
+             — and what I didn’t.
+          </p>
           <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing 
-              elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. ad minim veniam, quis nostrud 
-              exercitation. Ad minim veniam, quis nostrud. 
-              Lorem ipsum dolor sit amet, consectetur adipiscing 
-              elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. ad minim veniam, quis nostrud 
-              exercitation. Ad minim veniam, quis nostrud. 
+          These years have taught me that I don’t need to have every step 
+          planned out to move forward. As long as I stay curious and keep 
+          working hard, I'll keep finding my way.
+          </p>
+          </div>
+          <h1>What is my passion?</h1>
+          <p className="large-first-letter">
+            I am really into solving complex problems. I love figuring stuff out and learning new things along the 
+            way. Sports and training have always been a big part of my life and I like to keep 
+            it that way.    
+
           </p>
           
-          <img 
-            src={me}
-            alt="Flappy" 
-            style={{ width: '100%', height: 'auto' }} 
-          />
 
         </Item>
-        <Item>
-        <h1>  .</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing 
-            elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. ad minim veniam, quis nostrud 
-            exercitation. Ad minim veniam, quis nostrud 
-          </p>
-        <h1>What is my passion?</h1>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing 
-              elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. ad minim veniam, quis nostrud 
-              exercitation. Ad minim veniam, quis nostrud 
-          </p>
+        <Item useFirstLetter>
+  
+
+        
           <img 
             src={boat}
             alt="Flappy" 
             style={{ width: '100%', height: 'auto' }} 
           />
           <h1>Where do you see yourself in 5 years?</h1>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing 
-              elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. ad minim veniam, quis nostrud 
-              exercitation. Ad minim veniam, quis nostrud 
+          <div>
+
+          <p className="large-first-letter">
+            Five years from now, I hope to look back and see that I’ve built 
+            things that made a difference, whether that's a piece of software, 
+            a system, or an analysis that helps making decisions. I want my
+            work to have a real impact, to solve problems that matter and 
+            to make life easier.
           </p>
-          
+          <p>
+            More than anything, I want to keep growing and learning, taking on
+            new challenges and working alongside people who inspire me. I may 
+            not know exactly where I’ll be, but I’m excited to keep exploring
+            , building, and finding new ways to contribute.
+          </p>
+          </div>
         </Item>
         </ContentGrid>
         <Line/>
@@ -348,13 +370,13 @@ interface ItemProps {
 }
 
 const Item = styled.div<ItemProps>`
-	background-color: black;
-	width: 100%;
-	display: flex
-	align-items: center
-	justify-content: center;
-	color: white;
-	text-align: justify;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: justify;
 
   h1 {
     font-size: 3rem;
@@ -364,12 +386,12 @@ const Item = styled.div<ItemProps>`
 
   p {
     font-size: 2rem;
-    line-height: 1;
+    line-height: 1.3;
 
     ${({ useFirstLetter }) =>
       useFirstLetter &&
       css`
-        &::first-letter {
+        &.large-first-letter::first-letter {
           font-size: 5rem;
           font-weight: bold;
           float: left;
@@ -380,6 +402,8 @@ const Item = styled.div<ItemProps>`
       `}
   }
 `;
+
+
 
 
 const About = styled.div`

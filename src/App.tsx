@@ -7,7 +7,6 @@ function App() {
 
         <Intro/>
         <AboutMe/>
-        <img src={`${import.meta.env.BASE_URL}boat.png`} alt="Boat" width={300} height={300} />
     </>
   );
 }
