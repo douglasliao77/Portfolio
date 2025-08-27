@@ -121,7 +121,7 @@ const skillData = [
     category: 'PLATFORMS/ TOOLS',
     items: [
         // Engine
-        { title: 'Unity' },
+        // { title: 'Unity' },
         
         // Version Control
         { title: 'GitHub' },

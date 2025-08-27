@@ -224,18 +224,7 @@ export default function AboutMe()
 								</ContentGrid>
 						</div>
 				</SliderWrapper>
-        <ContentGrid
-        >
-        <Item>
-          <h1>What’s Next?</h1>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing 
-              elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. ad minim veniam, quis nostrud 
-              exercitation. Ad minim veniam, quis nostrud 
-          </p>
-        </Item>
-        </ContentGrid>
+
         <Header>
           <h1>
 					  SKILLS

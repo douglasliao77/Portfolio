@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import type { KeenSliderInstance } from 'keen-slider';
 import ProjectCard from '../components/ProjectCard';
 import uttt from '../assets/images/uttt.png'
+import bostad from '../assets/images/bostad.png'
 import { useState } from "react";
 
 export default function App() {
@@ -92,7 +93,24 @@ export default function App() {
               githubUrl="https://github.com/douglasliao77/tic-tac-toe-2"
               websiteUrl="https://metatictactoe.vercel.app/"
             />
+          </Item>
 
+        </ContentGrid>
+      </div>
+      <div className="keen-slider__slide">
+        <ContentGrid>
+          <Item>
+              <h1>Coming Soon</h1>
+          </Item>
+          <Item>
+            <ProjectCard 
+              title="Bostadpris" 
+              imageSrc={bostad}
+              skills={[{ title: 'Python' }, 
+                { title: 'HTML'}, { title: 'CSS'}, { title: 'Streamlit'}]}
+              githubUrl="https://github.com/douglasliao77/tic-tac-toe-2"
+              websiteUrl="https://metatictactoe.vercel.app/"
+            />
           </Item>
         </ContentGrid>
       </div>
