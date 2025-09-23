@@ -1,6 +1,8 @@
 import styled from 'styled-components'; 
 import bostad from "../assets/images/bostad.png";
+import network from "../assets/images/network.png";
 
+import thesis from "../assets/thesis.pdf";
 
 export default function Project() {
     return (
@@ -57,21 +59,19 @@ export default function Project() {
                 smarter and more efficient.
                 </ProjectDescription>
                 <Links>
-                    <Link href="public/thesis.pdf" target="_blank">Download PDF</Link>
+                    {/* Download PDF from public/assets folder */}
+                    <Link href={thesis} download>Download PDF</Link>
                 </Links>
             </ProjectDetails>
-            <ProjectIframeWrapper>
-                <ProjectIframe 
-                    src="/Portfolio/public/thesis.pdf" 
-                    title="Master Thesis PDF"
-                />
-            </ProjectIframeWrapper>
+            <ImageWrapper>
+                <ProjectImage src={network} alt=""/>
+            </ImageWrapper>    
         </ProjectRow>
       </Container>
     );
 }
 
-
+// 💅 Styled components
 const Container = styled.section`
   position: relative;
   width: 100%;
@@ -180,7 +180,7 @@ const Link = styled.a`
 const ProjectIframeWrapper = styled.div`
   position: relative;
   width: 50%;
-  padding-bottom: 54%; /* desktop aspect ratio */
+  padding-bottom: 54%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -188,7 +188,7 @@ const ProjectIframeWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    padding-bottom: 150%; /* makes iframe taller for mobile */
+    padding-bottom: 150%;
   }
 `;
 
@@ -202,7 +202,6 @@ const ProjectIframe = styled.iframe`
   border-radius: 2rem;
   pointer-events: auto;
 `;
-
 
 const ImageWrapper = styled.div`
   width: 50%;
