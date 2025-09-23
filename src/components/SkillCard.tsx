@@ -34,6 +34,7 @@ const data = {
   'MATLAB': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg',
   'Julia': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg',
   'R': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+  'Streamlit': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg',
   'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   'Django': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg',
   'Flask': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg',
