@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import CollapsibleCards from "./pages/Portfolio";
 import AboutMe from "./pages/About";
@@ -59,8 +59,8 @@ function Home() {
 // --- App with Routes ---
 function App() {
   return (
-    <Router basename="/Portfolio/">
-      <Overlay /> {/* Overlay always listening to route changes */}
+    <Router>
+      <Overlay />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Experience />} />
