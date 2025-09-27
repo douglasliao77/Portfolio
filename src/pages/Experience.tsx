@@ -9,7 +9,8 @@ import Liu from "../assets/images/liu.png";
 import Falkenberg from "../assets/images/falkenberg.png";
 import Arla from "../assets/images/arla.png";
 import Ullared from "../assets/images/ullared.png";
-
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 export default function Experience() {
   const [offset, setOffset] = useState(0);
@@ -19,6 +20,20 @@ export default function Experience() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+        ease: [0.42, 0, 0.58, 1], 
+      },
+    }),
+  };
+  
 
   return (
     <>
@@ -38,14 +53,15 @@ export default function Experience() {
           <HeroRight>
             <HeroTitle>Nice to meet you.</HeroTitle>
             <HeroSubtitle>
-              Welcome to my portfolio, my name is Douglas. I just finished my 
-              degree in Computer Science & Engineering at Linköping University 
-              in Sweden. 
+              Welcome to my portfolio, my name is Douglas. I just finished my
+              degree in Computer Science & Engineering at Linköping University
+              in Sweden.
             </HeroSubtitle>
             <HeroSubtitle>
               I’m driven by solving problems that make a difference. I focus on
-              creating systems and processes that are impactful, reliable, 
-              and brings clarity, while constantly learning and refining my approach.
+              creating systems and processes that are impactful, reliable, and
+              brings clarity, while constantly learning and refining my
+              approach.
             </HeroSubtitle>
           </HeroRight>
         </Hero>
@@ -55,78 +71,61 @@ export default function Experience() {
         {/* Education Section */}
         <Section>
           <SectionTitle>Education</SectionTitle>
-          <Box>
+          <AnimatedBox
+            custom={0}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <BoxImage src={Liu} alt="Education Example" />
             <BoxContent>
               <CardTitle>M.Sc. Computer Science & Engineering</CardTitle>
               <CardSubtitle>Linköping University</CardSubtitle>
-              <CardDescription>
-
-              </CardDescription>
             </BoxContent>
-          </Box>
-          
-          <Box>
+          </AnimatedBox>
+
+          <AnimatedBox
+            custom={1}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <BoxImage src={Falkenberg} alt="Education Example" />
             <BoxContent>
               <CardTitle>Highschool Diploma</CardTitle>
               <CardSubtitle>Falkbergs Gymnasieskola</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
             </BoxContent>
-          </Box>
+          </AnimatedBox>
         </Section>
 
         {/* Experience Section */}
         <Section>
           <SectionTitle>Experience</SectionTitle>
-          <Box>
-            <BoxImage src={Ericsson} alt="Experience Example" />
-            <BoxContent>
-              <CardTitle>Software Developer Intern</CardTitle>
-              <CardSubtitle>Ericsson</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
-            </BoxContent>
-          </Box>
-          <Box>
-            <BoxImage src={Liu} alt="Experience Example" />
-            <BoxContent>
-              <CardTitle>Course Assistant</CardTitle>
-              <CardSubtitle>Linköping University</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
-            </BoxContent>
-          </Box>
-          <Box>
-            <BoxImage src={Liu} alt="Experience Example" />
-            <BoxContent>
-              <CardTitle>Research Assistant</CardTitle>
-              <CardSubtitle>Linköping University</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
-            </BoxContent>
-          </Box>
 
-          <Box>
-            <BoxImage src={Arla} alt="Experience Example" />
-            <BoxContent>
-              <CardTitle>Machine Operator</CardTitle>
-              <CardSubtitle>Arla Foods AB</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
-            </BoxContent>
-          </Box>
-
-          <Box>
-            <BoxImage src={Ullared} alt="Experience Example" />
-            <BoxContent>
-              <CardTitle>Customer support</CardTitle>
-              <CardSubtitle>Gekås AB</CardSubtitle>
-              <CardDescription>
-              </CardDescription>
-            </BoxContent>
-          </Box>
+          {[ 
+            { img: Ericsson, title: "Software Developer Intern", subtitle: "Ericsson" },
+            { img: Liu, title: "Course Assistant", subtitle: "Linköping University" },
+            { img: Liu, title: "Research Assistant", subtitle: "Linköping University" },
+            { img: Arla, title: "Machine Operator", subtitle: "Arla Foods AB" },
+            { img: Ullared, title: "Customer Support", subtitle: "Gekås AB" },
+          ].map((exp, i) => (
+            <AnimatedBox
+              key={i}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <BoxImage src={exp.img} alt={exp.title} />
+              <BoxContent>
+                <CardTitle>{exp.title}</CardTitle>
+                <CardSubtitle>{exp.subtitle}</CardSubtitle>
+              </BoxContent>
+            </AnimatedBox>
+          ))}
         </Section>
 
         <SkillContainer>
@@ -181,6 +180,10 @@ const BarLinks = styled.div`
   gap: 5rem;
   padding: 0.5rem 2rem;
   border-radius: 50px;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 `;
 
 const barLinkStyles = `
@@ -215,6 +218,10 @@ const barLinkStyles = `
     width: 100%;
     left: 0;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledRouterLink = styled(Link)`${barLinkStyles}`;
@@ -245,6 +252,13 @@ const Hero = styled.div`
   height: 100vh;
   padding: 4rem;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+  }
 `;
 
 const HeroLeft = styled.div`
@@ -252,12 +266,22 @@ const HeroLeft = styled.div`
   padding-right: 2rem;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 const HeroTitle = styled.h1`
   font-size: 8rem;
   margin-bottom: 3rem;
   color: #2c2c2c;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const HeroSubtitle = styled.p`
@@ -266,6 +290,11 @@ const HeroSubtitle = styled.p`
   max-width: 600px;
   color: #2c2c2c;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
 `;
 
 const HeroRight = styled.div`
@@ -274,25 +303,42 @@ const HeroRight = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Photo = styled.img`
   z-index: 5;
   width: 70%;
-  height: 45%;
+  height: auto;
   border-radius: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const Content = styled.div`
   padding: 4rem;
   background: black;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const Section = styled.div`
   margin-bottom: 6rem;
   width: 80%;
   margin-left: 10%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -302,6 +348,10 @@ const SectionTitle = styled.h2`
   display: inline-block;
   padding-bottom: 0.5rem;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const Box = styled.div`
@@ -313,11 +363,12 @@ const Box = styled.div`
   margin-bottom: 2rem;
   border-radius: 16px;
   backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+`;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+const AnimatedBox = styled(motion(Box))`
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
   }
 `;
 
@@ -337,16 +388,18 @@ const CardTitle = styled.h3`
   font-weight: bold;
   margin: 0.5rem 0;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const CardSubtitle = styled.h4`
   font-size: 1.5rem;
   margin: 0.3rem 0;
   color: #ccc;
-`;
 
-const CardDescription = styled.p`
-  font-size: 1.3rem;
-  color: white;
-  line-height: 1.8;
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;

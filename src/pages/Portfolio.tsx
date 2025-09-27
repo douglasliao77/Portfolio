@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useRef, useEffect, useState } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
 interface CardData {
   id: string;
@@ -23,8 +23,7 @@ const cardsData: CardData[] = [
     title: 'DBMS, OOP & OS Fundamentals',
     content: 'I apply core concepts in databases, object-oriented programming, and operating systems to create software that is reliable, efficient, and easy to maintain.',
     skills: ['SQL', 'Transactions', 'Classes & Objects', 'Processes']
-  }
-  ,
+  },
   {
     id: 'card3',
     number: '03',
@@ -32,7 +31,6 @@ const cardsData: CardData[] = [
     content: 'Clear documentation saves time and avoids confusion. I focus on making technical concepts straightforward and accessible so teams can work more efficiently.',
     skills: ['Technical Writing', 'API Documentation', 'System Architecture', 'Code Reviews']
   },
-
   {
     id: 'card4',
     number: '04',
@@ -47,7 +45,19 @@ const Container = styled.div`
   padding: 4rem 2rem;
 `;
 
-const Card = styled.div<{ topOffset: number; zIndex: number }>`
+/* Animation */
+const fadeUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const Card = styled.div<{ topOffset: number; zIndex: number; visible: boolean }>`
   background: #080807;
   padding: 2.5rem;
   margin-bottom: 5rem;
@@ -58,11 +68,23 @@ const Card = styled.div<{ topOffset: number; zIndex: number }>`
   border-top: 1px solid #393632;
   display: flex;
   align-items: flex-start;
-  gap: 50rem; 
+  gap: 10rem;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  ${({ visible }) =>
+    visible &&
+    css`
+      opacity: 1;
+      transform: translateY(0);
+      animation: ${fadeUp} 0.8s ease forwards;
+    `}
 
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem; 
+    top: ${({ topOffset }) => topOffset * 1.3}px; 
   }
 `;
 
@@ -70,67 +92,108 @@ const CardNumber = styled.div`
   font-size: 5rem; 
   font-weight: 900;
   color: #d1d1c7;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const CardContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  
 `;
 
 const CardTitle = styled.h2`
-  font-size: 5rem; 
+  font-size: 4rem; 
   font-weight: 700;
   margin: 0 0 2rem 0;
   color: #d1d1c7;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const CardContent = styled.p`
-  font-size: 2rem; 
+  font-size: 1.8rem; 
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: #ccc;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
 `;
 
 const CardSkills = styled.ul`
-  list-style: none; /* remove default bullets */
+  list-style: none;
   padding-left: 0;
   margin: 0;
-  counter-reset: skill-counter; /* initialize counter */
+  counter-reset: skill-counter;
 `;
 
 const SkillItem = styled.li`
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #d1d1c7;
-  counter-increment: skill-counter; /* increment counter */
+  counter-increment: skill-counter;
 
   &::before {
-    content: counter(skill-counter, decimal-leading-zero) ". "; /* 01, 02, 03 */
+    content: counter(skill-counter, decimal-leading-zero) ". ";
     color: #d1d1c7;
     font-weight: bold;
     margin-right: 0.5rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
-
 const CollapsibleCards: React.FC = () => {
+  const [visibleCards, setVisibleCards] = useState<string[]>([]);
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => [...new Set([...prev, entry.target.id])]);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    refs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Container>
       {cardsData.map((card, index) => (
-        <Card 
+        <Card
           key={card.id}
-          topOffset={100 + index * 120} 
+          id={card.id}
+          ref={(el) => { refs.current[0] = el; }} 
+          topOffset={100 + index * 120}
           zIndex={index + 1}
+          visible={visibleCards.includes(card.id)}
         >
           <CardNumber>{card.number}</CardNumber>
           <CardContentWrapper>
             <CardTitle>{card.title}</CardTitle>
             <CardContent>{card.content}</CardContent>
             <CardSkills>
-              {card.skills.map(skill => (
+              {card.skills.map((skill) => (
                 <SkillItem key={skill}>{skill}</SkillItem>
               ))}
             </CardSkills>
