@@ -95,7 +95,7 @@ Please change the parent <Route path="${O}"> to <Route path="${O==="/"?"*":`${O}
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem; 
-    top: ${({topOffset:n})=>n*1.3}px; 
+    top: ${({topOffset:n})=>n*1.3}px;
   }
 `,hE=$.div`
   font-size: 5rem; 
@@ -151,7 +151,7 @@ Please change the parent <Route path="${O}"> to <Route path="${O==="/"?"*":`${O}
   @media (max-width: 768px) {
     font-size: 1.4rem;
   }
-`,vE=()=>{const[n,a]=R.useState([]),s=R.useRef([]);return R.useEffect(()=>{const r=new IntersectionObserver(u=>{u.forEach(f=>{f.isIntersecting&&a(h=>[...new Set([...h,f.target.id])])})},{threshold:.3});return s.current.forEach(u=>{u&&r.observe(u)}),()=>r.disconnect()},[]),L.jsx(uE,{children:oE.map((r,u)=>L.jsxs(fE,{id:r.id,ref:f=>{s.current[0]=f},topOffset:100+u*120,zIndex:u+1,visible:n.includes(r.id),children:[L.jsx(hE,{children:r.number}),L.jsxs(dE,{children:[L.jsx(mE,{children:r.title}),L.jsx(pE,{children:r.content}),L.jsx(gE,{children:r.skills.map(f=>L.jsx(yE,{children:f},f))})]})]},r.id))})},bE=$.section`
+`,vE=()=>{const[n,a]=R.useState([]),s=R.useRef(null);R.useEffect(()=>(s.current=new IntersectionObserver(u=>{u.forEach(f=>{f.isIntersecting?a(h=>[...new Set([...h,f.target.id])]):a(h=>h.filter(m=>m!==f.target.id))})},{threshold:.3}),()=>s.current?.disconnect()),[]);const r=u=>{u&&s.current?.observe(u)};return L.jsx(uE,{children:oE.map((u,f)=>L.jsxs(fE,{id:u.id,ref:r,topOffset:100+f*110,zIndex:f+1,visible:n.includes(u.id),children:[L.jsx(hE,{children:u.number}),L.jsxs(dE,{children:[L.jsx(mE,{children:u.title}),L.jsx(pE,{children:u.content}),L.jsx(gE,{children:u.skills.map(h=>L.jsx(yE,{children:h},h))})]})]},u.id))})},bE=$.section`
   position: relative;
   background: #080807;
   color: #111827;
