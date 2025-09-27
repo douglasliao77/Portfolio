@@ -45,7 +45,6 @@ const Container = styled.div`
   padding: 4rem 2rem;
 `;
 
-/* Animation */
 const fadeUp = keyframes`
   from {
     opacity: 0;
@@ -84,7 +83,7 @@ const Card = styled.div<{ topOffset: number; zIndex: number; visible: boolean }>
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem; 
-    top: ${({ topOffset }) => topOffset * 1.3}px; 
+    top: ${({ topOffset }) => topOffset * 1.3}px;
   }
 `;
 
@@ -156,26 +155,31 @@ const SkillItem = styled.li`
 
 const CollapsibleCards: React.FC = () => {
   const [visibleCards, setVisibleCards] = useState<string[]>([]);
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisibleCards((prev) => [...new Set([...prev, entry.target.id])]);
+          } else {
+            // remove from visible when scrolling out of view
+            setVisibleCards((prev) => prev.filter((id) => id !== entry.target.id));
           }
         });
       },
       { threshold: 0.3 }
     );
 
-    refs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
+    return () => observerRef.current?.disconnect();
   }, []);
+
+  const setRef = (el: HTMLDivElement | null) => {
+    if (el) {
+      observerRef.current?.observe(el);
+    }
+  };
 
   return (
     <Container>
@@ -183,8 +187,8 @@ const CollapsibleCards: React.FC = () => {
         <Card
           key={card.id}
           id={card.id}
-          ref={(el) => { refs.current[0] = el; }} 
-          topOffset={100 + index * 120}
+          ref={setRef}
+          topOffset={100 + index * 110}
           zIndex={index + 1}
           visible={visibleCards.includes(card.id)}
         >
